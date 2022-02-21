@@ -43,7 +43,7 @@ html{
     color: white;
     font-family: 'poppins',sans-serif;
 }
-.app{
+#app{
     display: flex;
     align-self: center;
     align-items: center;

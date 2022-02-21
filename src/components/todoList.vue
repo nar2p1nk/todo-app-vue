@@ -22,3 +22,20 @@ export default {
         </form>
     </div>
 </template>
+
+<style>
+ul{
+    padding: 0;
+    list-style: none;
+}
+li{
+    width: 100%;
+}
+label{
+    display: inline-block;
+    width: 200px;
+}
+.check{
+    float: right;
+}
+</style>
