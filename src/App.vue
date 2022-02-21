@@ -4,7 +4,7 @@ import todoList from './components/todoList.vue';
 export default {
     data(){
         return{
-            todo:[
+            todos1:[
                 {
                     id:1,
                     todo:'make pancakes'
@@ -26,13 +26,27 @@ export default {
         components:{
             todoForm,
             todoList
-        }
+        },
 }
 </script>
 
 <template>
         <h1>Todo App</h1>
         <todo-form />
-        <todo-list/>
+        <todo-list :todos=todos1 />
 </template>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+html{
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'poppins',sans-serif;
+}
+.app{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+</style>
