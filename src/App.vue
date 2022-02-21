@@ -1,11 +1,7 @@
-<template>
-    <div id='app'>
-    </div>
-</template>
-
 <script>
+import todoForm from './components/todoForm.vue';
+import todoList from './components/todoList.vue';
 export default {
-    name:'app',
     data(){
         return{
             todo:[
@@ -26,7 +22,17 @@ export default {
                     todo:'watch tv'
                 }
             ]
+        }},
+        components:{
+            todoForm,
+            todoList
         }
-    }
 }
 </script>
+
+<template>
+        <h1>Todo App</h1>
+        <todo-form />
+        <todo-list/>
+</template>
+
