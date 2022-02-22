@@ -1,9 +1,10 @@
 <script>
-import todoForm from './components/todoForm.vue';
+import todoForm from './components/todoForm.vue'
 import todoList from './components/todoList.vue';
 export default {
     data(){
         return{
+            Pmessage:'',
             todos1:[
                 {
                     id:1,
@@ -27,12 +28,27 @@ export default {
             todoForm,
             todoList
         },
+        methods:{
+            pushy:function(){
+                const todos1 = this.todos1
+                console.log(this.Pmessage)
+                const newId = todos1.length + 1
+                console.log(newId)
+                todos1.push({id:newId,todo:this.Pmessage})
+            }
+        }
 }
 </script>
 
 <template>
-        <h1>Todo App</h1>
-        <todo-form />
+    <h1>Todo App</h1>
+    <!--div class='post'>
+        <form class="form" @submit.prevent='pushy'>
+            <input type="text" v-model='message'> <button 
+           type='submit'>submit</button>
+        </form>
+    </div -->
+    <todo-form v-model:message=Pmessage @submit="pushy" />
         <todo-list :todos=todos1 />
 </template>
 

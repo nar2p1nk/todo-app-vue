@@ -1,15 +1,17 @@
+<template>
+   
+    <div class='post'>
+        <form class="form" @submit.prevent='pushy'>
+            <input type="text" :value='message' @change="$emit('update:message',$event.target.value)"> <button 
+           type='submit'>submit</button>
+        </form>
+    </div>
+
+</template>
+
 
 <script>
 export default {
-    //    props:{message:String}
+    props:{message:String},
 }
 </script>
-
-<template>
-    <div class='post'>
-        <form class="form" action="">
-            <input type="text" v-model='message'> <button 
-                type='submit' value='submit' >Submit</button>
-        </form>
-    </div>
-</template>
