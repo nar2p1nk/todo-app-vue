@@ -36,7 +36,10 @@ export default {
                 todos1.push({id:newId,todo:this.Pmessage})
             },
             logged(){
-                console.log(this.checkedId)
+                for(let i = 0; i < this.checkedId.length;i++){
+                    const todoId = this.checkedId[i] - 1;
+                    this.todos1.splice(todoId,1)
+                }
                 }
             },
         
