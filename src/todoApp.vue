@@ -1,0 +1,52 @@
+<script>
+
+import todosData from './data'
+
+export default {
+    name:'todoApp',
+    data(){
+        return{
+            todos:todosData
+        }
+    },
+}
+</script>
+
+
+<template>
+    <div>
+        <h1>he</h1>
+    </div>
+</template>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+html{
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'poppins',sans-serif;
+}
+.app{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+li{
+    width: 100%;
+}
+label{
+    display: inline-block;
+    width: 200px;
+}
+.check{
+    float: right;
+}
+</style>
