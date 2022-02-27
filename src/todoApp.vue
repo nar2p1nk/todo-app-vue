@@ -28,6 +28,16 @@ export default {
                 <input type="text" v-model='message'> <button type='submit'>submit</button>
             </form>
         </div>
+        <div class="list">
+            <h2></h2>
+            <form >
+                <ul>
+                    <li v-for='item in todos' :key='item.id'>
+                        <h3><label for=""></label><input type="text"></h3>
+                    </li>
+                </ul>
+            </form>
+        </div>
     </div>
 </template>
 
