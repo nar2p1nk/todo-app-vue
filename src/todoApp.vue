@@ -6,16 +6,28 @@ export default {
     name:'todoApp',
     data(){
         return{
-            todos:todosData
+            todos:todosData,
+            message:''
         }
     },
+    methods:{
+        logPost:function(){
+            console.log(this.message)
+            console.log(this.todos)
+        }
+    }
 }
 </script>
 
 
 <template>
-    <div>
-        <h1>he</h1>
+    <div class='app'>
+        <h1>todo-App</h1>
+        <div class="post">
+            <form class='post' @submit.prevent='logPost'>
+                <input type="text" v-model='message'> <button type='submit'>submit</button>
+            </form>
+        </div>
     </div>
 </template>
 
