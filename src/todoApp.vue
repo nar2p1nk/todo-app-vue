@@ -36,7 +36,8 @@ export default {
                         <h3>
                             <label :for='item.id'>{{item.todo}}</label>
                             <label class='switch'>
-                                <input type="checkbox">
+                              <input type="checkbox" v-if='item.completed == true' checked>
+                                <input type="checkbox" v-else>
                                 <span class='slider round'></span>
                             </label>
                             <button class='remove'>X</button>
@@ -142,16 +143,12 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .remove{
-    background-color: #352d68;
-    border-color: #352d68;
-    height: 100%;
-    padding: 3px 5px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: .2s;
-    cursor: pointer;
-    margin-left:10px;
+  border: 0;
+  font-size: 20px;
+  font-weight: bold;
+  transition: .2s;
+  cursor: pointer;
+  margin-left:10px;
 }
 .remove:hover{
     color:red;
