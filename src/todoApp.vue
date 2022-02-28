@@ -14,7 +14,7 @@ export default {
         logPost:function(){
             console.log(this.message)
             console.log(this.todos)
-        }
+        },
     }
 }
 </script>
@@ -30,13 +30,13 @@ export default {
         </div>
         <div class="list">
             <h2></h2>
-            <form >
+            <!--form -->
                 <ul>
                     <li v-for='item in todos' :key='item.id'>
                         <h3>
                             <label :for='item.id'>{{item.todo}}</label>
                             <label class='switch'>
-                              <input type="checkbox" v-if='item.completed == true' checked>
+                              <input type="checkbox" v-if='item.completed == true' checked @click="reverse(item.completed)">
                                 <input type="checkbox" v-else>
                                 <span class='slider round'></span>
                             </label>
@@ -44,7 +44,7 @@ export default {
                         </h3>
                     </li>
                 </ul>
-            </form>
+            <!--/form-->
         </div>
     </div>
 </template>
@@ -70,8 +70,11 @@ ul{
     list-style: none;
 }
 li{
-    width: 100%;
-    height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 58px;
 }
 label{
     display: inline-block;
