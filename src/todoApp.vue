@@ -15,6 +15,9 @@ export default {
             console.log(this.message)
             console.log(this.todos)
         },
+        loggedList:function(item){
+          console.log(item)
+        }
     }
 }
 </script>
@@ -36,8 +39,7 @@ export default {
                         <h3>
                             <label :for='item.id'>{{item.todo}}</label>
                             <label class='switch'>
-                              <input type="checkbox" v-if='item.completed == true' checked @click="reverse(item.completed)">
-                                <input type="checkbox" v-else>
+                              <input type="checkbox" v-model="item.completed" @change="loggedList(item)">
                                 <span class='slider round'></span>
                             </label>
                             <button class='remove'>X</button>
