@@ -11,9 +11,12 @@ export default {
         }
     },
     methods:{
-        logPost:function(){
-            console.log(this.message)
-            console.log(this.todos)
+      postSubmit:function(msg){
+        var todos = this.todos
+        const data = {id:todos.length + 1,todo:msg,completed:false}
+        todos.push(data)
+        console.log(data)
+        this.message = null;
         },
         loggedList:function(item){
           console.log(item)
@@ -27,7 +30,7 @@ export default {
     <div class='app'>
         <h1>todo-App</h1>
         <div class="post">
-            <form class='post' @submit.prevent='logPost'>
+            <form class='post' @submit.prevent='postSubmit(message)'>
                 <input type="text" v-model='message'> <button type='submit'>submit</button>
             </form>
         </div>
