@@ -20,9 +20,16 @@ export default {
         },
         loggedList:function(item){
           console.log(item)
-        }
+        },
+        remove:function(id){
+          console.log(id)
+          let index = this.todos.findIndex(i => i.id == id)
+          console.log(index)
+          if(index > -1){
+            this.todos.splice(index,1)
+          }
     }
-}
+}}
 </script>
 
 
@@ -42,10 +49,14 @@ export default {
                         <h3>
                             <label :for='item.id'>{{item.todo}}</label>
                             <label class='switch'>
-                              <input type="checkbox" v-model="item.completed" @change="loggedList(item)">
+                              <input type="checkbox"
+                                v-model="item.completed"
+                                @change="loggedList(item)">
+
                                 <span class='slider round'></span>
                             </label>
-                            <button class='remove'>X</button>
+                            <button class='remove'
+                              @click.once='remove(item.id)'>X</button>
                         </h3>
                     </li>
                 </ul>
